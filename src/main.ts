@@ -1,9 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import {
-  SwaggerModule,
-  DocumentBuilder,
-  SwaggerDocumentOptions,
-} from '@nestjs/swagger';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { urlencoded, json } from 'express';
 import { AppModule } from './app.module';
 import { initializeFirebaseApp } from './config/firebase.config';
