@@ -1,0 +1,44 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Product {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  name        String  @db.String
+  client      String  @db.String
+  description String  @db.String
+  materials   String  @db.String
+  time        String  @db.String
+  image       Image[]
+
+  @@map("products")
+}
+
+model Image {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  path      String @db.String
+  publicUrl String @db.String
+  type      String @db.String
+
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String  @unique @db.ObjectId
+
+  @@map("images")
+}
+
+model Vacancy {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  position        String   @db.String
+  department      String   @db.String
+  description     String   @db.String
+  descriptionItem String[] @db.String
+  contact         String   @db.String
+  salary          String
+
+  @@map("vacancies")
+}
