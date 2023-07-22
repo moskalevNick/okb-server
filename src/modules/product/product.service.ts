@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Product, Prisma, Image } from '@prisma/client';
 
 import { PrismaService } from '../prisma/prisma.service';
-import { FirebaseStorageProvider } from 'src/providers/firebase-storage.provider';
+import { FirebaseStorageProvider } from '../../providers/firebase-storage.provider';
 import { ImageService } from '../image/image.service';
 
 @Injectable()

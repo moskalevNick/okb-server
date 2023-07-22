@@ -4,7 +4,7 @@ import { Image } from '@prisma/client';
 import { getStorage, ref, uploadBytes, deleteObject } from 'firebase/storage';
 
 import * as path from 'path';
-import { initializeFirebaseApp } from 'src/config/firebase.config';
+import { initializeFirebaseApp } from '../config/firebase.config';
 
 @Injectable()
 export class FirebaseStorageProvider {

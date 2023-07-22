@@ -1,6 +1,6 @@
 import { Global, Module } from '@nestjs/common';
 import { ImageService } from './image.service';
-import { FirebaseStorageProvider } from 'src/providers/firebase-storage.provider';
+import { FirebaseStorageProvider } from '../../providers/firebase-storage.provider';
 
 @Global()
 @Module({
