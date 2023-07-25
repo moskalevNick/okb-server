@@ -21,8 +21,24 @@ export class ProductService {
     return createdProduct;
   }
 
-  async findAll(): Promise<Product[]> {
-    return await this.prisma.product.findMany();
+  async findAll(): Promise<
+    Prisma.ProductGetPayload<{
+      include: {
+        image: true;
+      };
+    }>[]
+  > {
+    return await this.prisma.product.findMany({
+      select: {
+        id: true,
+        name: true,
+        client: true,
+        description: true,
+        materials: true,
+        time: true,
+        image: true,
+      },
+    });
   }
 
   async uploadImage(
