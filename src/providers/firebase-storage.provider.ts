@@ -24,7 +24,7 @@ export class FirebaseStorageProvider {
     const fileRef = ref(storage, fullName);
 
     const uploaded = await uploadBytes(fileRef, file.buffer, {
-      contentType: 'image/jpeg',
+      contentType: 'image/*',
     });
 
     return { fullName, name: uploaded.metadata.name };
