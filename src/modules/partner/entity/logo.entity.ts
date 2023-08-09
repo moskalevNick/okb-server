@@ -10,7 +10,4 @@ export class logoEntity implements PartnerLogo {
 
   @ApiProperty()
   publicUrl: string;
-
-  @ApiProperty()
-  type: string;
 }
